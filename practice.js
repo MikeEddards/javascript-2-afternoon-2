@@ -18,7 +18,9 @@ var arr = [10,20,30];
 */
 
 //Code Here
-
+function first(arr){
+  return arr[0]
+}
 
 
 ////////// PROBLEM 2 //////////
@@ -33,7 +35,9 @@ var arr = [40,50,60];
 */
 
 //Code Here
-
+function last(arr){
+  return arr[arr.length - 1]
+}
 
 
 ////////// PROBLEM 3 //////////
@@ -48,7 +52,11 @@ var family = ['Tyler', 'Jordyn', 'Ryan', 'Chelsey', 'Ireland'];
 */
 
 //Code Here
-
+function looper(family){
+  for(let i = 0; i < family.length; i++){
+    alert(family[i])
+  }
+}
 
 
 ////////// PROBLEM 4 //////////
@@ -63,7 +71,11 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 */
 
 //Code Here
-
+function reversedLooper(letters){
+  for(let i = letters.length -1; i >= 0; i--){
+    alert(letters[i])
+  }
+}  
 
 
 ////////// PROBLEM 5 //////////
@@ -78,7 +90,15 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 */
 
 //Code Here
-
+function evenFinder(nums){
+  var evenNums = []
+  for(let i = 0; i < nums.length; i++){
+    if(nums[i] % 2 === 0){
+      evenNums.push(nums[i])
+    }
+  }
+  return evenNums
+}
 
 
 
@@ -107,6 +127,20 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 */
 
 //Code Here
+function divider(numbersArray){
+  var evens = []
+  var odds = []
+  var together = []
+  for(let i = 0; i < numbersArray.length; i++){
+    if(numbersArray[i] % 2 === 0){
+      evens.push(numbersArray[i])
+    }else {
+      odds.push(numbersArray[i])
+    }
+  }
+  together.push(evens,odds)
+  return together
+}
 
 
 
@@ -118,19 +152,26 @@ var getRandomArbitrary = function() {
 };
 // Do not edit the code above.
 
-/* 
-  var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
-  Above you're given a function (getRandomArbitrary) that will return a random number between 0 and 30.
-  There is also a commented out array full of numbers to help you visualize what your function will be receiving.
-  Write a function named finder that will take in an array as an argument.
-  In the function create a variable called randomNumber and set it to the invocation of getRandomArbitrary.
-  Loop through the array to see if randomNumber is in the array. 
-  If it is, return true, if it's not, return false
-*/
+ 
+  // var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
+  // Above you're given a function (getRandomArbitrary) that will return a random number between 0 and 30.
+  // There is also a commented out array full of numbers to help you visualize what your function will be receiving.
+  // Write a function named finder that will take in an array as an argument.
+  // In the function create a variable called randomNumber and set it to the invocation of getRandomArbitrary.
+  // Loop through the array to see if randomNumber is in the array. 
+  // If it is, return true, if it's not, return false
+
 
 //Code Here
-
-
+function finder(arr){
+  var randomNum = getRandomArbitrary()
+  for(let i = 0; i < arr.length; i++){
+    if(arr[i] === randomNum){
+      return true
+    }
+  }
+  return false
+}
 
 ////////// PROBLEM 8 //////////
 
@@ -158,7 +199,50 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
+var copy = myGroceryList.slice()
+function removeItem(list, toRemove){
+  
+  if((list  === undefined )||(toRemove === undefined)){
+    var empty = []
+    return empty
+    
+  } else if((list  !== undefined )||(toRemove !== undefined))  {
+    var copy = list.slice()
+      
+      for(let i = 0; i < copy.length; i++){
+        if(copy[i] === toRemove){
+          copy.splice(i,1)
+          return myGroceryList = copy
+        }else {
+          return list
+        }
+      }
+      
+    }
+    
+  }
 
+
+
+function addItem(myList, toAdd){
+  if((myList  === undefined )||(toAdd === undefined)){
+    var empty2 = []
+    return empty2
+    
+  }  else if((myList  !== undefined )||(toAdd !== undefined))  {
+    var copy = myList.slice()
+    
+    for(let i = 1; i < copy.length; i++){
+      if(toAdd !== myList){
+        copy.push(toAdd)
+        console.log(copy)
+        
+        
+      }
+      }
+    }
+    return copy
+  }
 
 
 ////////// PROBLEM 9 //////////
@@ -168,7 +252,15 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
-
+function maker(){
+  var nums = []
+  for(let i = 1; i< 216; i++){
+    nums.push(i)
+    
+    
+  }
+  return nums
+}
 
 
 ////////// PROBLEM 10 //////////
@@ -184,8 +276,15 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 */
   
 //Code Here
-
-
+function addTen(num1){
+  var newTens = []
+  for(let i = 0; i < num1.length; i++){
+    var tens= +num1[i] + 10
+    newTens.push(tens)
+    
+  }return newTens
+}
+addTen(numbers)
 
 ////////// PROBLEM 11 //////////
 
@@ -209,7 +308,13 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
-
+function longer(arr1, arr2){
+  if(arr1.length > arr2.length){
+    return arr1
+  }else {
+    return arr2
+  }
+}
 
 
 /*
@@ -222,7 +327,14 @@ for(var i = 0; i < num2; i++){
 
 //Code Here
 
-
+function both(arr1, arr2){
+  var match = []
+  for(let i = 0; i < arr.length; i++){
+    if(arr1.indexOf(arr2[i]) === -1)
+    match.push(arr[i])
+    console.log(match)
+}
+}
 
 ////////// PROBLEM 12 //////////
 
@@ -261,8 +373,8 @@ var colt = {
 */
 
 //Code Here
-
-
+devMountainEmployees.push(joe,cahlan,ryan,colt)
+console.log(devMountainEmployees)
 
 /*
   Now let's say Cahlan has to take a leave of absence.
@@ -270,8 +382,12 @@ var colt = {
 */
 
 //Code Here
-
-
+for(let i = 0; i < devMountainEmployees.length; i++){
+  if(devMountainEmployees[i] === cahlan){
+    devMountainEmployees.splice(i,1)
+  }
+}
+console.log(devMountainEmployees)
 
 ////////// PROBLEM 13 //////////
 
@@ -282,7 +398,7 @@ var colt = {
 */
 
 //Code Here
-
+var users = []
 
 
 /*
@@ -301,7 +417,7 @@ var user1 = {
 // Do not edit the code above.
 
 //Code Here
-
+users.push(user1)
 
 
 /*
@@ -313,9 +429,6 @@ var user1 = {
   Loop through your array of objects until you find Mark's account (use his email, mark.mciver@devmounta.in, to find him).
   Once you find the array index he's located in, delete him from the array.
 */
-
-//Code Here
-
 
 
 /*
